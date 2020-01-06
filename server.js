@@ -49,4 +49,15 @@ app.route('/api/cats/:name').delete((req, res) => {
     res.sendStatus(204)
   })
 
-  
+/* Enabling CORS 
+
+run: npm install cors --save
+*/
+const cors = require('cors')
+
+var corsOptions = {
+  origin: 'http://example.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+}
+
+app.use(cors(corsOptions))  
