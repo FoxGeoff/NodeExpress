@@ -24,5 +24,22 @@ app.listen(8000, () => {
     res.send({ name: requestedCatName })
   })
 
-  /* Run: npm install body-parser --save */
+  /* Run: npm install body-parser --save 
   
+  Another method of a REST-API is creating a 
+  new object at the endpoint. This method is 
+  different to the methods we looked at before 
+  because it is using the HTTP-post-request 
+  instead of the get-request
+  
+  */
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.route('/api/cats').post((req, res) => {
+  res.send(201, req.body)
+})
+
+/* Changing an Object at an Endpoint */
+app.route('/api/cats/:name').put((req, res) => {
+    res.send(200, req.body)
+  })
