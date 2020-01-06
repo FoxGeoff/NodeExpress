@@ -23,3 +23,6 @@ app.listen(8000, () => {
     const requestedCatName = req.params['name']
     res.send({ name: requestedCatName })
   })
+
+  /* Run: npm install body-parser --save */
+  
