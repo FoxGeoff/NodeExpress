@@ -43,3 +43,10 @@ app.route('/api/cats').post((req, res) => {
 app.route('/api/cats/:name').put((req, res) => {
     res.send(200, req.body)
   })
+
+/* Delete */
+app.route('/api/cats/:name').delete((req, res) => {
+    res.sendStatus(204)
+  })
+
+  
