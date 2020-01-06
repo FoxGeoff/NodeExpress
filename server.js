@@ -52,6 +52,8 @@ app.route('/api/cats/:name').delete((req, res) => {
 /* Enabling CORS 
 
 run: npm install cors --save
+https://expressjs.com/en/resources/middleware/cors.html
+
 */
 const cors = require('cors')
 
