@@ -54,12 +54,25 @@ app.route('/api/cats/:name').delete((req, res) => {
 run: npm install cors --save
 https://expressjs.com/en/resources/middleware/cors.html
 
-*/
-const cors = require('cors')
+Simple Usage (Enable All CORS Requests)
 
+*/
+const cors = require('cors');
+app.use(cors());
+
+app.get('/api/cats', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
+
+/*
 var corsOptions = {
-  origin: 'http://example.com',
+  origin: 'http://localhost:4200',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 }
 
-app.use(cors(corsOptions))  
+app.use(cors(corsOptions))
+*/  
